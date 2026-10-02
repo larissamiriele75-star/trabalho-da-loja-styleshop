@@ -2,19 +2,40 @@
 
 session_start();
 
-// Encerrar todas as informações da sessão
+/*
+|--------------------------------------------------------------------------
+| STYLES HOP - LOGOUT
+|--------------------------------------------------------------------------
+| Encerra a sessão do usuário e retorna para a página inicial da loja.
+|--------------------------------------------------------------------------
+*/
+
+
+// Limpa todas as informações da sessão
 $_SESSION = [];
 
-// Destruir a sessão
+
+// Remove o cookie da sessão, se estiver sendo utilizado
+if (ini_get("session.use_cookies")) {
+
+    $parametros = session_get_cookie_params();
+
+    setcookie(
+        session_name(),
+        "",
+        time() - 42000,
+        $parametros["path"],
+        $parametros["domain"],
+        $parametros["secure"],
+        $parametros["httponly"]
+    );
+}
+
+
+// Destrói a sessão
 session_destroy();
 
-// Responder em JSON
-header("Content-Type: application/json; charset=utf-8");
 
-echo json_encode([
-    "sucesso" => true,
-    "mensagem" => "Logout realizado com sucesso."
-]);
-
+// Volta para a página inicial da StyleShop
+header("Location: ../../public/index.php");
 exit;
-?>

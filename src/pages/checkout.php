@@ -12,7 +12,6 @@ require_once "../php/conexao.php";
 if (!isset($_SESSION['id_usuario'])) {
     header("Location: /styleshop/public/index.php");
 exit();
-    exit;
 }
 
 $id_usuario_logado = $_SESSION['id_usuario'];

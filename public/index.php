@@ -48,6 +48,13 @@ while ($produto = $resultado->fetch_assoc()) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/assets/css/style.css">
+  <style>
+@media (max-width: 767px) {
+    #nomeLoja {
+        display: none !important;
+    }
+}
+</style>
   <script>
     const produtos = <?php echo json_encode(
       $produtosBanco,
@@ -708,7 +715,7 @@ while ($produto = $resultado->fetch_assoc()) {
       <header class="bg-gray-800 text-white p-4 flex justify-between items-center sticky top-0 z-40">
         <div class="flex items-center gap-3">
           <img src="../src/assets/img/logo.png" alt="StyleShop" width="40" height="40" class="w-10 h-10 object-contain">
-          <h1 class="text-2xl font-bold">StyleShop</h1>
+          <h1 id="nomeLoja" class="text-2xl font-bold">StyleShop</h1>
         </div>
         <div class="flex items-center gap-2 flex-wrap">
           <div
