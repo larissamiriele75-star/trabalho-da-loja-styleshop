@@ -48,14 +48,278 @@ while ($produto = $resultado->fetch_assoc()) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/assets/css/style.css">
+
   <style>
-@media (max-width: 767px) {
+
+/* =========================================================
+   STYLES HOP - RESPONSIVIDADE
+   CELULAR E TABLET
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET
+   Até 1024px
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* ---------- CABEÇALHO ---------- */
+
     #nomeLoja {
         display: none !important;
     }
+
+    #nomeUsuario {
+        display: none !important;
+    }
+
+    header {
+        padding: 10px 14px !important;
+        gap: 8px !important;
+    }
+
+    header > div:first-child {
+        gap: 8px !important;
+    }
+
+    header > div:first-child img {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    #navFoto {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    header button,
+    header a {
+        font-size: 13px !important;
+    }
+
+
+    /* ---------- MODAL DO PERFIL ---------- */
+
+    #modalPerfil > div {
+        width: calc(100% - 32px) !important;
+        max-width: 700px !important;
+        max-height: 92vh !important;
+    }
+
+    #modalPerfil > div > div:first-child {
+        padding: 12px 16px !important;
+    }
+
+    #modalPerfil .flex-1.overflow-hidden {
+        flex-direction: column !important;
+    }
+
+    #modalPerfil nav {
+        width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid #e5e7eb !important;
+        padding: 8px !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        gap: 5px !important;
+    }
+
+    #modalPerfil nav button {
+        white-space: nowrap !important;
+        font-size: 12px !important;
+        padding: 7px 9px !important;
+    }
+
+    #modalPerfil .flex-1.overflow-y-auto {
+        padding: 16px !important;
+    }
 }
+
+
+/* =========================================================
+   CELULAR
+   Até 767px
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /* ---------- CABEÇALHO ---------- */
+
+    header {
+        padding: 8px 10px !important;
+        min-height: 56px !important;
+        align-items: center !important;
+    }
+
+    header > div:first-child {
+        gap: 5px !important;
+        flex-shrink: 0 !important;
+    }
+
+    header > div:first-child img {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    #nomeLoja {
+        display: none !important;
+    }
+
+    #nomeUsuario {
+        display: none !important;
+    }
+
+    header > div:last-child {
+        gap: 4px !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-end !important;
+    }
+
+    #navFoto {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 11px !important;
+        flex-shrink: 0 !important;
+    }
+
+    #btnAuth,
+    #btnSair,
+    #btnAdmin {
+        font-size: 11px !important;
+        padding: 5px 7px !important;
+        white-space: nowrap !important;
+    }
+
+    #temaBtn {
+        font-size: 14px !important;
+        padding: 5px 7px !important;
+        min-width: 32px !important;
+    }
+
+    #abrirCarrinho {
+        font-size: 12px !important;
+        padding: 6px 8px !important;
+        white-space: nowrap !important;
+    }
+
+
+    /* ---------- MODAL DO PERFIL ---------- */
+
+    #modalPerfil {
+        padding: 8px !important;
+    }
+
+    #modalPerfil > div {
+        width: 100% !important;
+        max-width: none !important;
+        max-height: 94vh !important;
+        margin: 0 !important;
+        border-radius: 16px !important;
+    }
+
+    /* Cabeçalho rosa do perfil */
+
+    #modalPerfil > div > div:first-child {
+        padding: 10px 12px !important;
+    }
+
+    #modalPerfil #avatarCircle {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 14px !important;
+    }
+
+    #perfilNomeHeader {
+        font-size: 14px !important;
+    }
+
+    #modalPerfil > div > div:first-child p.text-xs {
+        font-size: 10px !important;
+    }
+
+    #modalPerfil > div > div:first-child button {
+        font-size: 22px !important;
+    }
+
+
+    /* Área principal do perfil */
+
+    #modalPerfil .flex-1.overflow-hidden {
+        flex-direction: column !important;
+        min-height: 0 !important;
+    }
+
+
+    /* Menu das abas */
+
+    #modalPerfil nav {
+        width: 100% !important;
+        flex-direction: row !important;
+        border-right: none !important;
+        border-bottom: 1px solid #374151 !important;
+        padding: 6px !important;
+        gap: 4px !important;
+        overflow-x: auto !important;
+        flex-shrink: 0 !important;
+        justify-content: space-between;
+    }
+
+    #modalPerfil nav button:not(.icon-modal-perfil){
+      font-size: 0 !important;
+      width: 50px;
+      text-align: center;
+    }
+
+    #modalPerfil nav button {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        font-size: 11px !important;
+        padding: 7px 9px !important;
+    }
+
+    #modalPerfil nav button span.icon-modal-perfil{
+      font-size: 11px;
+    }
+
+    /* Conteúdo */
+
+    #modalPerfil .flex-1.overflow-y-auto {
+        padding: 12px !important;
+        min-width: 0 !important;
+    }
+
+    #modalPerfil .flex-1.overflow-y-auto h3 {
+        font-size: 16px !important;
+        margin-bottom: 12px !important;
+    }
+
+
+    /* Campos do perfil */
+
+    #modalPerfil input,
+    #modalPerfil select,
+    #modalPerfil textarea {
+        font-size: 13px !important;
+        padding: 8px 10px !important;
+    }
+
+    #modalPerfil label {
+        font-size: 12px !important;
+    }
+
+
+    /* Botões */
+
+    #modalPerfil form button[type="submit"] {
+        width: 100% !important;
+        padding: 9px 12px !important;
+        font-size: 13px !important;
+    }
+}
+
 </style>
-  <script>
+<script>
     const produtos = <?php echo json_encode(
       $produtosBanco,
       JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
@@ -75,15 +339,14 @@ while ($produto = $resultado->fetch_assoc()) {
       <button
         type="button"
         onclick="fecharModalAuth()"
-        style="position:absolute; top:15px; right:20px; border:none; background:none; font-size:24px; font-weight:bold; cursor:pointer; color:#6b7280;"
-        aria-label="Fechar">
+        
+        aria-label="Fechar" class="css-inline-1">
         ×
       </button>
 
       <h2 id="authTitulo" class="text-2xl font-bold mb-6 text-center">
         Entrar na conta
       </h2>
-
 
       <!-- LOGIN -->
       <div id="formLogin">
@@ -130,7 +393,6 @@ while ($produto = $resultado->fetch_assoc()) {
         </p>
 
       </div>
-
 
       <!-- CADASTRO -->
       <form
@@ -194,16 +456,11 @@ while ($produto = $resultado->fetch_assoc()) {
 
         <!-- BARRA DE FORÇA DA SENHA -->
         <div
-          class="w-full h-2 rounded-full bg-gray-200 mb-1"
-          style="overflow:hidden">
+          class="w-full h-2 rounded-full bg-gray-200 mb-1 css-inline-2"
+          >
           <div
             id="forcaSenhaFill"
-            style="
-        height:100%;
-        width:0%;
-        border-radius:999px;
-        transition:width .3s, background .3s;
-      "></div>
+             class="css-inline-3"></div>
         </div>
 
         <!-- MENSAGEM DA FORÇA DA SENHA -->
@@ -259,7 +516,6 @@ while ($produto = $resultado->fetch_assoc()) {
         </div>
       </div>
 
-
       <!-- ═══════════════════════════════════════════
      MODAL DETALHES DO PRODUTO
 ═══════════════════════════════════════════ -->
@@ -290,7 +546,7 @@ while ($produto = $resultado->fetch_assoc()) {
 
           <!-- TÍTULO -->
           <h2 id="checkoutTitulo" class="text-2xl font-bold mb-5 text-center">
-            Finalizar compra
+          Finaliza compra
           </h2>
 
           <!-- INDICADOR DE ETAPAS -->
@@ -388,7 +644,6 @@ while ($produto = $resultado->fetch_assoc()) {
 
           </div>
 
-
           <!-- ═════════════════════════════
          ETAPA 2 - PAGAMENTO
     ═════════════════════════════ -->
@@ -460,7 +715,6 @@ while ($produto = $resultado->fetch_assoc()) {
 
           </div>
 
-
           <!-- ═════════════════════════════
          ETAPA 3 - REVISÃO
     ═════════════════════════════ -->
@@ -508,7 +762,6 @@ while ($produto = $resultado->fetch_assoc()) {
 
           </div>
 
-
           <!-- ═════════════════════════════
          CONFIRMAÇÃO
     ═════════════════════════════ -->
@@ -539,7 +792,7 @@ while ($produto = $resultado->fetch_assoc()) {
      MODAL PERFIL
 ═══════════════════════════════════════════ -->
       <div id="modalPerfil" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center hidden">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-3xl mx-4 overflow-hidden" style="max-height:90vh;display:flex;flex-direction:column">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-3xl mx-4 overflow-hidden css-inline-4" >
 
           <!-- Header do perfil -->
           <div class="bg-pink-600 text-white px-6 py-4 flex justify-between items-center flex-shrink-0">
@@ -550,7 +803,7 @@ while ($produto = $resultado->fetch_assoc()) {
                 <div class="absolute inset-0 rounded-full bg-black bg-opacity-0 group-hover:bg-opacity-40 flex items-center justify-center transition-all">
                   <span class="text-white text-xs opacity-0 group-hover:opacity-100 font-semibold text-center leading-tight">📷<br>Alterar</span>
                 </div>
-                <input type="file"id="inputFotoPerfil"accept="image/*"class="hidden">
+                <input type="file" id="inputFotoPerfil" accept="image/*" class="hidden">
               </label>
               <div>
                 <p id="perfilNomeHeader" class="font-bold leading-tight"></p>
@@ -566,31 +819,31 @@ while ($produto = $resultado->fetch_assoc()) {
              <button
   id="btn-aba-dados"
   class="perfil-tab active text-left px-3 py-2 rounded-lg text-sm font-semibold">
-  👤 Meus dados
+  <span class="icon-modal-perfil">👤</span> Meus dados
 </button>
 
 <button
   id="btn-aba-endereco"
   class="perfil-tab text-left px-3 py-2 rounded-lg text-sm font-semibold">
-  📍 Endereço
+  <span class="icon-modal-perfil">📍</span> Endereço
 </button>
 
 <button
   id="btn-aba-pedidos"
   class="perfil-tab text-left px-3 py-2 rounded-lg text-sm font-semibold">
-  📦 Meus pedidos
+  <span class="icon-modal-perfil">📦</span> Meus pedidos
 </button>
 
 <button
   id="btn-aba-senha"
   class="perfil-tab text-left px-3 py-2 rounded-lg text-sm font-semibold">
-  🔒 Senha
+  <span class="icon-modal-perfil">🔒</span> Senha
 </button>
 
 <button
   class="perfil-tab text-left px-3 py-2 rounded-lg text-sm font-semibold"
   onclick="abrirWhatsApp()">
-  💬 Falar com loja
+  <span class="icon-modal-perfil">💬</span> Falar com loja
 </button>
             </nav>
 
@@ -691,7 +944,7 @@ while ($produto = $resultado->fetch_assoc()) {
               <!-- ABA: SENHA -->
               <div id="aba-senha" class="perfil-conteudo hidden">
                 <h3 class="text-lg font-bold mb-4">Alterar senha</h3>
-                <form onsubmit="alterarSenha(event)" style="max-width:360px">
+                <form onsubmit="alterarSenha(event)"  class="css-inline-5">
                   <label class="block text-sm font-semibold mb-1">Senha atual</label>
                   <input id="senhaAtual" type="password" placeholder="Sua senha atual" class="mb-3">
                   <label class="block text-sm font-semibold mb-1">Nova senha</label>
@@ -725,31 +978,25 @@ while ($produto = $resultado->fetch_assoc()) {
   class="w-8 h-8 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-sm cursor-pointer hover:ring-2 hover:ring-pink-300 transition-all overflow-hidden">
 </div>
 
-<span
-  id="nomeUsuario"
-  class="text-sm hidden text-gray-300">
-</span>
-            <span id="nomeUsuario" class="text-sm hidden text-gray-300"></span>
+<span id="nomeUsuario" class="text-sm hidden text-gray-300"></span>
           </div>
           <!-- <button id="btnPerfil" onclick="abrirPerfil()" aria-label="Ver perfil" class="bg-gray-700 px-3 py-1 rounded hover:bg-gray-600 text-sm hidden">👤 Perfil</button> -->
           <button id="btnAuth" onclick="abrirModalAuth()" aria-label="Entrar" class="bg-gray-700 px-3 py-1 rounded hover:bg-gray-600 text-sm">Entrar</button>
           <?php if (isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] === "admin"): ?>
-
-    <a
-        href="admin.php"
-        id="btnAdmin"
-        class="bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded text-sm">
-        ⚙️ Administração
-    </a>
-
-<?php endif; ?>
+            <a
+              href="admin.php"
+              id="btnAdmin"
+              class="bg-purple-600 hover:bg-purple-700 px-3 py-1 rounded text-sm">
+              ⚙️ Administração
+            </a>
+          <?php endif; ?>
           <button id="btnSair" onclick="fazerLogout()" aria-label="Sair" class="bg-gray-600 px-3 py-1 rounded hover:bg-gray-500 text-sm hidden">Sair</button>
           <button
-  id="temaBtn"
-  aria-label="Alternar modo escuro"
-  class="bg-gray-700 px-3 py-1 rounded hover:bg-gray-600">
-  🌙
-</button>
+            id="temaBtn"
+            aria-label="Alternar modo escuro"
+            class="bg-gray-700 px-3 py-1 rounded hover:bg-gray-600">
+            🌙
+          </button>
           <button id="abrirCarrinho" aria-label="Abrir carrinho" class="bg-pink-600 px-4 py-2 rounded">
             🛒 (<span id="contador">0</span>)
           </button>
@@ -759,7 +1006,7 @@ while ($produto = $resultado->fetch_assoc()) {
       <!-- ═══════════════════════════════════════════
      CARRINHO LATERAL
 ═══════════════════════════════════════════ -->
-      <div id="carrinho" class="fixed top-0 right-0 w-80 h-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-2xl p-4 hidden overflow-y-auto z-50" style="display:none;flex-direction:column">
+      <div id="carrinho" class="fixed top-0 right-0 w-80 h-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-2xl p-4 hidden overflow-y-auto z-50 css-inline-6" >
         <div class="flex justify-between items-center mb-4">
           <h2 class="text-xl font-bold">🛒 Carrinho</h2>
           <button id="fecharCarrinho" aria-label="Fechar carrinho" class="text-gray-400 hover:text-gray-700 text-2xl">&times;</button>

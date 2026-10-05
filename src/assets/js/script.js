@@ -6297,7 +6297,7 @@ function renderizarPedidos() {
               it => `
 
                 <span
-                  class="text-xs bg-gray-100 px-2 py-1 rounded"
+                  class="nome-produto-pedido text-xs bg-gray-100 px-2 py-1 rounded"
                 >
 
                   ${it.nome}
@@ -7924,6 +7924,16 @@ async function inicializarSite() {
       atualizarContadorCarrinho();
     }
 
+    // Abrir checkout automaticamente após "Comprar agora"
+const destinoInicial = localStorage.getItem('redirecionarAposLogin');
+
+if (logado && destinoInicial === 'checkout') {
+    localStorage.removeItem('redirecionarAposLogin');
+
+    setTimeout(() => {
+        finalizarCompra();
+    }, 200);
+}
 
     // ════════════════════════════════════════
     // 7. PRODUTOS

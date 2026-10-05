@@ -1,3 +1,105 @@
+:root{
+    --color-primary: #252525;
+}
+
+.nome-produto-pedido{
+    color: var(--color-primary);
+}
+
+/* =====================================================
+   RESPONSIVIDADE DO CABEÇALHO
+   SOMENTE CELULAR E TABLET
+   ===================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    #nomeLoja {
+        display: none !important;
+    }
+
+    #nomeUsuario {
+        display: none !important;
+    }
+
+    header {
+        padding: 10px 14px !important;
+        gap: 8px !important;
+    }
+
+    header > div:first-child {
+        gap: 8px !important;
+    }
+
+    header img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    #navFoto {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 13px !important;
+    }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+
+    #nomeLoja {
+        display: none !important;
+    }
+
+    #nomeUsuario {
+        display: none !important;
+    }
+
+    header {
+        padding: 8px 10px !important;
+        min-height: 58px !important;
+        gap: 6px !important;
+    }
+
+    header > div:first-child {
+        gap: 5px !important;
+    }
+
+    header img {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    #navFoto {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 12px !important;
+    }
+
+    header button,
+    header a {
+        font-size: 12px !important;
+        padding: 6px 9px !important;
+    }
+
+    #abrirCarrinho {
+        min-width: 48px !important;
+        padding: 6px 8px !important;
+    }
+}
+
+/* =====================================================
+   ESTILOS QUE ANTES ESTAVAM COMO style="..." NO HTML
+   ===================================================== */
+
+.css-inline-1 { position:absolute; top:15px; right:20px; border:none; background:none; font-size:24px; font-weight:bold; cursor:pointer; color:#6b7280; }
+.css-inline-2 { overflow:hidden }
+.css-inline-3 { height:100%; width:0%; border-radius:999px; transition:width .3s, background .3s; }
+.css-inline-4 { max-height:90vh;display:flex;flex-direction:column }
+.css-inline-5 { max-width:360px }
+.css-inline-6 { display:none;flex-direction:column }
+
+
+
 /* CSS separado do StyleShop */
 body { font-family: 'Poppins', sans-serif; }
 
